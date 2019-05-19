@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.1.171/sell?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false
+  jpa:
+    show-sql: true
+  devtools:
+    restart:
+      enabled: true
+      exclude: static/**
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 192.168.1.171
+    port: 6379
+server:
+  servlet:
+    context-path: /sell
+wechat:
+  #公众账号的id和secret，用于 推送，授权 测试账号
+  mpAppId: wx7731263c4df0c63e
+  mpAppSecret: 5ffcf19987ec138c09d9cc1447d3347a
+  #公众账号的id和secret 用于支付
+#  mpAppId: wxd898fcb01713c658
+#  mpAppSecret: #支付不需要
+  #开放平台，用于卖家扫码登录
+  openAppId:
+  openAppSecret:
+  #支付/商户号
+  #mchId: 借用账号 http://clinkz.natapp1.cc/sell/pay/create
+  mchId: 1483469312
+  #mchKey: 秘钥见课程源码doc
+  mchKey: C5245D70627C1F8E9964D494B0735025
+  #证书路径（发起支付不需要证书，退款需要）
+  keyPath: E:\MyWork\sell\src\main\resources\h5.p12
+  notifyUrl: http://clinkz.natapp1.cc/sell/pay/notify
+  templateId:
+    orderStatus: Wg-0Z7NjDB7Vhv7FKoS1QadS5n8ZsdxbIOqJFTdoocU
+
+projectUrl:
+  wechatMpAuthorize: http://clinkz.natapp1.cc
+  wechatOpenAuthorize: http://clinkz.natapp1.cc
+  sell: http://clinkz.natapp1.cc
