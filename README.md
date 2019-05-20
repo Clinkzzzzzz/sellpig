@@ -11,5 +11,7 @@
 买家（手机端，微信），卖家（PC端）。</br>
 
 部署架构：</br>
-                      前端资源     转发     后端资源</br>
-卖家端/买家端   --->  Nginx 服务器-------->tomcat服务器------>redis/mysql</br>
+
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;前端资源&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;转发
+&ensp;&ensp;&ensp;&ensp;后端资源</br>
+卖家端/买家端-------->Nginx 服务器-------->tomcat服务器------>redis/mysql</br>
