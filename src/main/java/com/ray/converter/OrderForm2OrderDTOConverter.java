@@ -6,7 +6,7 @@ import com.ray.dataobject.OrderDetail;
 import com.ray.dto.OrderDTO;
 import com.ray.enums.ResultEnum;
 import com.ray.exception.SellException;
-import com.ray.from.OrderFrom;
+import com.ray.form.OrderFrom;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;

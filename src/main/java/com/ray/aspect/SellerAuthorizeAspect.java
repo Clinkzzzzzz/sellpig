@@ -28,7 +28,7 @@ public class SellerAuthorizeAspect {
 
     @Autowired
     private StringRedisTemplate redisTemplate;
-
+    //定义切入点
     @Pointcut("execution(public * com.ray.controller.Seller*.*(..))"+
             "&& !execution(public * com.ray.controller.SellerUserController.*(..))")//controller中除去登录登出
     public void verify(){
@@ -37,16 +37,15 @@ public class SellerAuthorizeAspect {
 
     @Before("verify()")//切入点前操作
     public void doVerify(){
+        //获取request
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
-
         //查询cookie
         Cookie cookie = CookieUtil.get(request, CookieConstant.TOKEN);
         if(cookie == null){
             log.warn("【登录校验】cookie中查不到token");
-            throw  new SellerAuthorizeException();
+            throw  new SellerAuthorizeException();//由handler捕获
         }
-
         //去redis里查询
         String tokenValue = redisTemplate.opsForValue().get(String.format(RedisConstant.TOKEN_PREFIX,cookie.getValue()));
         if(StringUtils.isEmpty(tokenValue)){

@@ -2,7 +2,7 @@ package com.ray.controller;
 
 import com.ray.dataobject.ProductCategory;
 import com.ray.exception.SellException;
-import com.ray.from.CategoryForm;
+import com.ray.form.CategoryForm;
 import com.ray.service.ProductCategoryService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

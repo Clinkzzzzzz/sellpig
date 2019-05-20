@@ -1,4 +1,4 @@
-package com.ray.from;
+package com.ray.form;
 
 import lombok.Data;
 import javax.validation.constraints.NotEmpty;

@@ -6,7 +6,7 @@ import com.ray.converter.OrderForm2OrderDTOConverter;
 import com.ray.dto.OrderDTO;
 import com.ray.enums.ResultEnum;
 import com.ray.exception.SellException;
-import com.ray.from.OrderFrom;
+import com.ray.form.OrderFrom;
 import com.ray.service.BuyerService;
 import com.ray.service.OrderService;
 import lombok.extern.slf4j.Slf4j;

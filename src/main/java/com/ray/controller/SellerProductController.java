@@ -4,13 +4,12 @@ import com.ray.Util.KeyUtil;
 import com.ray.dataobject.ProductCategory;
 import com.ray.dataobject.ProductInfo;
 import com.ray.exception.SellException;
-import com.ray.from.ProductForm;
+import com.ray.form.ProductForm;
 import com.ray.service.ProductCategoryService;
 import com.ray.service.ProductInfoService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -104,7 +103,7 @@ public class SellerProductController {
     }
 
     @PostMapping("/save")
-   // @CachePut(cacheNames = "product",key = "123")//每次执行方法内容，并将返回对象塞入redis
+   // @CachePut(cacheNames = "product",key = "123")//每次执行方法内容，并将返回对象塞入redis,因方法返回对象不一致采用下列注解
     @CacheEvict(cacheNames = "product", key = "123")//每次执行该方法后清除相应缓存
     public ModelAndView save(@Valid ProductForm form,
                              BindingResult bindingResult,

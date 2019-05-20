@@ -54,6 +54,10 @@ public class SecKillServiceImpl implements SecKillService {
         return this.queryMap(productId);
     }
 
+    /**
+     * 模拟秒杀业务
+     * @param productId
+     */
     @Override
     public void orderProductMockDiffUser(String productId) {
         //加锁

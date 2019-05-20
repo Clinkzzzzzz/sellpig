@@ -22,12 +22,12 @@ public class RedisLock {
         if(redisTemplate.opsForValue().setIfAbsent(key,value)){//setnx 如果可以设置 返回1（true）
             return true;//锁住
         }
-        //防止死锁
+        //如果被锁代码抛出异常则会出现死锁，所以必须有如下判断
         String currentValue = redisTemplate.opsForValue().get(key);
-        //如果锁过期
+        //如果锁过期（存储时间小于当前时间）
         if(!StringUtils.isEmpty(currentValue)
                 &&Long.parseLong(currentValue)<System.currentTimeMillis()){
-            //获取上一个锁的时间，使用getset
+            //获取上一个锁的时间，使用getset //redis的单线程导致多线程情况下下列代码只有一个线程执行
             String oldValue = redisTemplate.opsForValue().getAndSet(key,value);
             if(!StringUtils.isEmpty(oldValue)&&oldValue.equals(currentValue)){
                 return true;
