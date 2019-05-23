@@ -63,6 +63,12 @@ public class WechatController {
         return "redirect:" + redirectUrl;
     }
 
+    /**
+     * 扫码取得openid
+     * @param code
+     * @param returnUrl
+     * @return
+     */
     @GetMapping("/qrUserInfo")
     public String qrUserInfo(@RequestParam("code") String code,
                              @RequestParam("state") String returnUrl){

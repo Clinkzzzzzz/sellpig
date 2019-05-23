@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)//防止websocket报错
 public class PushMessageServiceImplTest {
 
     @Autowired
@@ -20,7 +20,7 @@ public class PushMessageServiceImplTest {
     private OrderService orderService;
     @Test
     public void orderStatus() {
-        OrderDTO orderDTO = orderService.findOne("1557830139181980938");
+        OrderDTO orderDTO = orderService.findOne("1558176592489653827");
         pushMessageService.orderStatus(orderDTO);
     }
 }

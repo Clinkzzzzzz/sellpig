@@ -19,6 +19,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 /**
+ * 卖家端验证身份
  * aop验证身份
  */
 @Aspect
