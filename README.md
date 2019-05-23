@@ -6,7 +6,7 @@
 后端：springboot bootstrap+freemarker+jquery</br>
 前后端用RESTful风格接口相连</br>
 数据库：MySQL，Redis</br>
-微信的登录，支付，退款功能因无公众哈采用测试号测试。</br>
+微信的登录，支付，退款功能因无公众号采用测试号和借用号测试。</br>
 角色划分：</br>
 买家（手机端，微信），卖家（PC端）。</br>
 
